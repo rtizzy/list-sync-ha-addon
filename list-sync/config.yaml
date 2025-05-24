@@ -12,8 +12,6 @@ arch:
   - aarch64
   - i386
 
-init: false
-
 environment:
   OVERSEERR_URL: "${options.OVERSEERR_URL}"
   OVERSEERR_API_KEY: "${options.OVERSEERR_API_KEY}"
