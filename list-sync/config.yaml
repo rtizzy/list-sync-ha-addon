@@ -11,9 +11,6 @@ arch:
   - aarch64
   - i386
 init: false
-# optionally map folders if needed
-map:
-  - share:rw
 
 options:
   OVERSEERR_URL: ""    # URL of your Overseerr/Jellyseerr instance
