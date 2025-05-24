@@ -12,8 +12,6 @@ arch:
   - aarch64
   - i386
 
-environment: *opts
-
 options: &opts
   OVERSEERR_URL: "http://homeassistant.local/"
   OVERSEERR_API_KEY: null
@@ -29,6 +27,8 @@ options: &opts
   MDBLIST_LISTS: ""
   STEVENLU_LISTS: ""
   TMDB_KEY: ""
+
+environment: *opts
 
 schema:
   OVERSEERR_URL: str
