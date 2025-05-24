@@ -12,23 +12,86 @@ arch:
   - i386
 init: false
 
+environment:
+  OVERSEERR_URL: "${options.OVERSEERR_URL}"
+  OVERSEERR_API_KEY: "${options.OVERSEERR_API_KEY}"
+  OVERSEERR_USER_ID: "${options.OVERSEERR_USER_ID}"
+  AUTOMATED_MODE: "${options.AUTOMATED_MODE}"
+  OVERSEERR_4K: "${options.OVERSEERR_4K}"
+  SYNC_INTERVAL: "${options.SYNC_INTERVAL}"
+  OVERSEERR_4K: "${options.OVERSEERR_4K}"
+  TRAKT_SPECIAL_ITEMS_LIMIT: "${options.TRAKT_SPECIAL_ITEMS_LIMIT}"
+  IMDB_LISTS: "${options.IMDB_LISTS}"
+  TRAKT_LISTS: "${options.TRAKT_LISTS}"
+  TRAKT_SPECIAL_LISTS: "${options.TRAKT_SPECIAL_LISTS}"
+  LETTERBOXD_LISTS: "${options.LETTERBOXD_LISTS}"
+  MDBLIST_LISTS: "${options.MDBLIST_LISTS}"
+  STEVENLU_LISTS: "${options.STEVENLU_LISTS}"
+  DISCORD_WEBHOOK_URL: "${options.DISCORD_WEBHOOK_URL}"
+  TMDB_KEY: "${options.TMDB_KEY}"
+
 options:
-  OVERSEERR_URL: ""    # URL of your Overseerr/Jellyseerr instance
-  OVERSEERR_API_KEY: ""                       # API key with permissions to add items
-  IMDB_LISTS: ""                              # Comma-separated IMDb list IDs (optional)
-  TRAKT_LISTS: ""                             # Comma-separated Trakt list slugs or IDs (optional)
-  TMDB_KEY: ""                                # TMDB API key for metadata (optional)
-  SYNC_INTERVAL: 24                            # Sync interval in hours
-  PORT: 3000                                   # Server port inside container
+  OVERSEERR_URL:
+    description: "URL of your Overseerr/Jellyseerr instance"
+    default: "http://homeassistant.local/"
+  OVERSEERR_API_KEY:
+    description: "API key with permissions to add items"
+  OVERSEERR_USER_ID:
+    description: "User ID in Overseerr (default 1)"
+    default: 1
+  AUTOMATED_MODE:
+    description: "Enable automated mode (true/false)"
+    default: true
+  OVERSEERR_4K:
+    description: "Request 4K content only (true/false)"
+    default: false
+  SYNC_INTERVAL:
+    description: "Sync interval in hours"
+    default: 24
+  OVERSEERR_4K:
+    description: "Flag to sync 4K items"
+    default: false
+  TRAKT_SPECIAL_ITEMS_LIMIT:
+    description: "Max items for Trakt special lists"
+    default: 20
+  IMDB_LISTS:
+    description: "Comma-separated IMDb list IDs (optional)"
+    default: ""
+  TRAKT_LISTS:
+    description: "Comma-separated Trakt list slugs or IDs (optional)"
+    default: ""
+  TRAKT_SPECIAL_LISTS:
+    description: "Comma-separated Trakt special list slugs (optional)"
+    default: ""
+  LETTERBOXD_LISTS:
+    description: "Comma-separated Letterboxd list URLs or IDs (optional)"
+    default: ""
+  MDBLIST_LISTS:
+    description: "Comma-separated MDB List IDs (optional)"
+    default: ""
+  STEVENLU_LISTS:
+    description: "Comma-separated StevenLu list slugs (optional)"
+    default: ""
+  TMDB_KEY:
+    description: "TMDB API key for metadata (optional)"
+    default: ""
 
 schema:
   OVERSEERR_URL: str
   OVERSEERR_API_KEY: str
+  OVERSEERR_USER_ID: int?
+  AUTOMATED_MODE: bool?
+  OVERSEERR_4K: bool?
+  SYNC_INTERVAL: int?
+  TRAKT_SPECIAL_ITEMS_LIMIT: int?
   IMDB_LISTS: str?
   TRAKT_LISTS: str?
+  TRAKT_SPECIAL_LISTS: str?
+  LETTERBOXD_LISTS: str?
+  MDBLIST_LISTS: str?
+  STEVENLU_LISTS: str?
+  DISCORD_WEBHOOK_URL: str?
   TMDB_KEY: str?
-  SYNC_INTERVAL: int?
-  PORT: int?
 
 image: "ghcr.io/woahai321/list-sync:main"
 startup: services
@@ -36,6 +99,3 @@ boot: auto
 network_mode: bridge
 host_network: false
 privileged: false
-ports:
-  "3000/tcp": 3000
-webui: "http://[HOST]:[PORT]"
