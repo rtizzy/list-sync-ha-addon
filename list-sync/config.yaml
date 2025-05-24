@@ -19,7 +19,6 @@ environment:
   AUTOMATED_MODE: "${options.AUTOMATED_MODE}"
   OVERSEERR_4K: "${options.OVERSEERR_4K}"
   SYNC_INTERVAL: "${options.SYNC_INTERVAL}"
-  OVERSEERR_4K: "${options.OVERSEERR_4K}"
   TRAKT_SPECIAL_ITEMS_LIMIT: "${options.TRAKT_SPECIAL_ITEMS_LIMIT}"
   IMDB_LISTS: "${options.IMDB_LISTS}"
   TRAKT_LISTS: "${options.TRAKT_LISTS}"
@@ -48,9 +47,6 @@ options:
   SYNC_INTERVAL:
     description: "Sync interval in hours"
     default: 24
-  OVERSEERR_4K:
-    description: "Flag to sync 4K items"
-    default: false
   TRAKT_SPECIAL_ITEMS_LIMIT:
     description: "Max items for Trakt special lists"
     default: 20
