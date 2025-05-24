@@ -6,11 +6,7 @@ description: "Runs the ListSync server via its Docker image"
 url: "https://github.com/Woahai321/list-sync"
 
 arch:
-  - amd64
-  - armhf
-  - armv7
   - aarch64
-  - i386
 
 
 options: &opts
