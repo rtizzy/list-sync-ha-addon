@@ -12,24 +12,9 @@ arch:
   - aarch64
   - i386
 
-environment:
-  OVERSEERR_URL: "${options.OVERSEERR_URL}"
-  OVERSEERR_API_KEY: "${options.OVERSEERR_API_KEY}"
-  OVERSEERR_USER_ID: "${options.OVERSEERR_USER_ID}"
-  AUTOMATED_MODE: "${options.AUTOMATED_MODE}"
-  OVERSEERR_4K: "${options.OVERSEERR_4K}"
-  SYNC_INTERVAL: "${options.SYNC_INTERVAL}"
-  TRAKT_SPECIAL_ITEMS_LIMIT: "${options.TRAKT_SPECIAL_ITEMS_LIMIT}"
-  IMDB_LISTS: "${options.IMDB_LISTS}"
-  TRAKT_LISTS: "${options.TRAKT_LISTS}"
-  TRAKT_SPECIAL_LISTS: "${options.TRAKT_SPECIAL_LISTS}"
-  LETTERBOXD_LISTS: "${options.LETTERBOXD_LISTS}"
-  MDBLIST_LISTS: "${options.MDBLIST_LISTS}"
-  STEVENLU_LISTS: "${options.STEVENLU_LISTS}"
-  DISCORD_WEBHOOK_URL: "${options.DISCORD_WEBHOOK_URL}"
-  TMDB_KEY: "${options.TMDB_KEY}"
+environment: *opts
 
-options:
+options: &opts
   OVERSEERR_URL: "http://homeassistant.local/"
   OVERSEERR_API_KEY: null
   OVERSEERR_USER_ID: null
@@ -45,22 +30,22 @@ options:
   STEVENLU_LISTS: ""
   TMDB_KEY: ""
 
-# schema:
-#   OVERSEERR_URL: str
-#   OVERSEERR_API_KEY: str
-#   OVERSEERR_USER_ID: int?
-#   AUTOMATED_MODE: bool?
-#   OVERSEERR_4K: bool?
-#   SYNC_INTERVAL: int?
-#   TRAKT_SPECIAL_ITEMS_LIMIT: int?
-#   IMDB_LISTS: str?
-#   TRAKT_LISTS: str?
-#   TRAKT_SPECIAL_LISTS: str?
-#   LETTERBOXD_LISTS: str?
-#   MDBLIST_LISTS: str?
-#   STEVENLU_LISTS: str?
-#   DISCORD_WEBHOOK_URL: str?
-#   TMDB_KEY: str?
+schema:
+  OVERSEERR_URL: str
+  OVERSEERR_API_KEY: str
+  OVERSEERR_USER_ID: int?
+  AUTOMATED_MODE: bool?
+  OVERSEERR_4K: bool?
+  SYNC_INTERVAL: int?
+  TRAKT_SPECIAL_ITEMS_LIMIT: int?
+  IMDB_LISTS: str?
+  TRAKT_LISTS: str?
+  TRAKT_SPECIAL_LISTS: str?
+  LETTERBOXD_LISTS: str?
+  MDBLIST_LISTS: str?
+  STEVENLU_LISTS: str?
+  DISCORD_WEBHOOK_URL: str?
+  TMDB_KEY: str?
 
 image: "ghcr.io/woahai321/list-sync"
 startup: services
