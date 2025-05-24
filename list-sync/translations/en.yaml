@@ -1,4 +1,49 @@
 configuration:
-  message:
-    name: Message
-    description: The message that will be printed to the log when starting this example add-on.
+  OVERSEERR_URL:
+    name: "Overseerr URL"
+    description: "URL of your Overseerr/Jellyseerr instance"
+  OVERSEERR_API_KEY:
+    name: "Overseerr API Key"
+    description: "API key with permissions to add items"
+  OVERSEERR_USER_ID:
+    name: "Overseerr User ID"
+    description: "Numeric user ID in your Overseerr instance"
+  AUTOMATED_MODE:
+    name: "Automated Mode"
+    description: "Run in fully automated mode (true/false)"
+  OVERSEERR_4K:
+    name: "4K Content Only"
+    description: "Only sync 4K items (true/false)"
+  SYNC_INTERVAL:
+    name: "Sync Interval (hours)"
+    description: "How often to sync lists, in hours"
+  TRAKT_SPECIAL_ITEMS_LIMIT:
+    name: "Trakt Special Items Limit"
+    description: "Max items to retrieve for Trakt special lists"
+  IMDB_LISTS:
+    name: "IMDb List IDs"
+    description: "Comma-separated IMDb list IDs to sync"
+  TRAKT_LISTS:
+    name: "Trakt List IDs"
+    description: "Comma-separated Trakt list slugs or IDs"
+  TRAKT_SPECIAL_LISTS:
+    name: "Trakt Special Lists"
+    description: "Comma-separated Trakt special list slugs"
+  LETTERBOXD_LISTS:
+    name: "Letterboxd Lists"
+    description: "Comma-separated Letterboxd list names or URLs"
+  MDBLIST_LISTS:
+    name: "MDB List IDs"
+    description: "Comma-separated MDB List IDs to sync"
+  STEVENLU_LISTS:
+    name: "StevenLu Lists"
+    description: "Comma-separated StevenLu list slugs"
+  DISCORD_WEBHOOK_URL:
+    name: "Discord Webhook"
+    description: "Webhook URL for Discord notifications"
+  TMDB_KEY:
+    name: "TMDB API Key"
+    description: "Your TMDB API key for metadata lookups"
+  PORT:
+    name: "Server Port"
+    description: "Port the ListSync server listens on"
