@@ -12,6 +12,9 @@ arch:
   - aarch64
   - i386
 
+options: 
+  testing: "default"
+
 # options: &opts
 #   OVERSEERR_URL: "http://homeassistant.local/"
 #   OVERSEERR_API_KEY: null
