@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: "ListSync"
-version: "0.0.1"
+version: "0.5.8"
 slug: "list-sync"
 description: "Runs the ListSync server via its Docker image"
 url: "https://github.com/Woahai321/list-sync"
