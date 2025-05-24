@@ -16,7 +16,7 @@ arch:
 options: &opts
   OVERSEERR_URL: "http://homeassistant.local:5055"
   OVERSEERR_API_KEY: null
-  OVERSEERR_USER_ID: null
+  OVERSEERR_USER_ID: "1"
   AUTOMATED_MODE: "true"
   OVERSEERR_4K: "false"
   SYNC_INTERVAL: "24"
@@ -39,14 +39,14 @@ schema:
   OVERSEERR_4K: str
   SYNC_INTERVAL: str
   TRAKT_SPECIAL_ITEMS_LIMIT: str
-  IMDB_LISTS: str
-  TRAKT_LISTS: str
-  TRAKT_SPECIAL_LISTS: str
-  LETTERBOXD_LISTS: str
-  MDBLIST_LISTS: str
-  STEVENLU_LISTS: str
-  DISCORD_WEBHOOK_URL: str
-  TMDB_KEY: str
+  IMDB_LISTS: "str?"
+  TRAKT_LISTS: "str?"
+  TRAKT_SPECIAL_LISTS: "str?"
+  LETTERBOXD_LISTS: str?
+  MDBLIST_LISTS: str?
+  STEVENLU_LISTS: str?
+  DISCORD_WEBHOOK_URL: "str?"
+  TMDB_KEY: "str?"
 
 image: "ghcr.io/woahai321/list-sync"
 startup: services
