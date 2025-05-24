@@ -4,12 +4,14 @@ version: "0.5.8"
 slug: "list-sync"
 description: "Runs the ListSync server via its Docker image"
 url: "https://github.com/Woahai321/list-sync"
+
 arch:
   - amd64
   - armhf
   - armv7
   - aarch64
   - i386
+
 init: false
 
 environment:
@@ -35,21 +37,22 @@ options:
     default: "http://homeassistant.local/"
   OVERSEERR_API_KEY:
     description: "API key with permissions to add items"
+    default: null
   OVERSEERR_USER_ID:
-    description: "User ID in Overseerr (default 1)"
-    default: 1
+    description: "User ID in Overseerr "
+    default: null
   AUTOMATED_MODE:
     description: "Enable automated mode (true/false)"
-    default: true
+    default: "true"
   OVERSEERR_4K:
     description: "Request 4K content only (true/false)"
-    default: false
+    default: "false"
   SYNC_INTERVAL:
     description: "Sync interval in hours"
-    default: 24
+    default: "24"
   TRAKT_SPECIAL_ITEMS_LIMIT:
     description: "Max items for Trakt special lists"
-    default: 20
+    default: "20"
   IMDB_LISTS:
     description: "Comma-separated IMDb list IDs (optional)"
     default: ""
