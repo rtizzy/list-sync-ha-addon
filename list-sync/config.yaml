@@ -15,7 +15,7 @@ arch:
 init: false
 
 environment:
-  OVERSEERR_URL: "${options.OVERSEERR_URL}"
+  OVERSEERR_URL: "${options.OVERSEERR_URL.default}"
   OVERSEERR_API_KEY: "${options.OVERSEERR_API_KEY}"
   OVERSEERR_USER_ID: "${options.OVERSEERR_USER_ID}"
   AUTOMATED_MODE: "${options.AUTOMATED_MODE}"
