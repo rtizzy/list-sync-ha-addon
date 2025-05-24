@@ -94,4 +94,3 @@ startup: services
 boot: auto
 network_mode: bridge
 host_network: false
-privileged: false
