@@ -89,7 +89,7 @@ schema:
   DISCORD_WEBHOOK_URL: str?
   TMDB_KEY: str?
 
-image: "ghcr.io/woahai321/list-sync:main"
+image: "ghcr.io/woahai321/list-sync"
 startup: services
 boot: auto
 network_mode: bridge
