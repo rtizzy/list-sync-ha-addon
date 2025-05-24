@@ -1,0 +1,44 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: "ListSync"
+version: "0.0.1"
+slug: "listsync"
+description: "Runs the ListSync server via its Docker image"
+url: "https://github.com/Woahai321/list-sync"
+arch:
+  - amd64
+  - armhf
+  - armv7
+  - aarch64
+  - i386
+init: false
+# optionally map folders if needed
+map:
+  - share:rw
+
+options:
+  OVERSEERR_URL: ""    # URL of your Overseerr/Jellyseerr instance
+  OVERSEERR_API_KEY: ""                       # API key with permissions to add items
+  IMDB_LISTS: ""                              # Comma-separated IMDb list IDs (optional)
+  TRAKT_LISTS: ""                             # Comma-separated Trakt list slugs or IDs (optional)
+  TMDB_KEY: ""                                # TMDB API key for metadata (optional)
+  SYNC_INTERVAL: 24                            # Sync interval in hours
+  PORT: 3000                                   # Server port inside container
+
+schema:
+  OVERSEERR_URL: str
+  OVERSEERR_API_KEY: str
+  IMDB_LISTS: str?
+  TRAKT_LISTS: str?
+  TMDB_KEY: str?
+  SYNC_INTERVAL: int?
+  PORT: int?
+
+image: "ghcr.io/woahai321/list-sync:main"
+startup: services
+boot: auto
+network_mode: bridge
+host_network: false
+privileged: false
+ports:
+  "3000/tcp": 3000
+webui: "http://[HOST]:[PORT]"
