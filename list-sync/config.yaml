@@ -33,19 +33,19 @@ environment: *opts
 schema:
   OVERSEERR_URL: str
   OVERSEERR_API_KEY: str
-  OVERSEERR_USER_ID: int?
-  AUTOMATED_MODE: bool?
-  OVERSEERR_4K: bool?
-  SYNC_INTERVAL: int?
-  TRAKT_SPECIAL_ITEMS_LIMIT: int?
-  IMDB_LISTS: str?
-  TRAKT_LISTS: str?
-  TRAKT_SPECIAL_LISTS: str?
-  LETTERBOXD_LISTS: str?
-  MDBLIST_LISTS: str?
-  STEVENLU_LISTS: str?
-  DISCORD_WEBHOOK_URL: str?
-  TMDB_KEY: str?
+  OVERSEERR_USER_ID: str
+  AUTOMATED_MODE: str
+  OVERSEERR_4K: str
+  SYNC_INTERVAL: str
+  TRAKT_SPECIAL_ITEMS_LIMIT: str
+  IMDB_LISTS: str
+  TRAKT_LISTS: str
+  TRAKT_SPECIAL_LISTS: str
+  LETTERBOXD_LISTS: str
+  MDBLIST_LISTS: str
+  STEVENLU_LISTS: str
+  DISCORD_WEBHOOK_URL: str
+  TMDB_KEY: str
 
 image: "ghcr.io/woahai321/list-sync"
 startup: services
