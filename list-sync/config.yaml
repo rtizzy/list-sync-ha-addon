@@ -12,11 +12,9 @@ arch:
   - aarch64
   - i386
 
-options: 
-  testing: "default"
 
-# options: &opts
-#   OVERSEERR_URL: "http://homeassistant.local/"
+options: &opts
+  OVERSEERR_URL: "http://homeassistant.local:5055"
 #   OVERSEERR_API_KEY: null
 #   OVERSEERR_USER_ID: null
 #   AUTOMATED_MODE: "true"
@@ -33,8 +31,8 @@ options:
 
 # environment: *opts
 
-# schema:
-#   OVERSEERR_URL: str
+schema:
+  OVERSEERR_URL: str
 #   OVERSEERR_API_KEY: str
 #   OVERSEERR_USER_ID: str
 #   AUTOMATED_MODE: str
